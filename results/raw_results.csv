@@ -1,0 +1,10 @@
+grid_name,heuristic,path_found,path_cost,nodes_expanded,runtime
+small_easy,manhattan,True,8,10,3.783300053328276e-05
+small_easy,euclidean,True,8,10,2.845900598913431e-05
+small_easy,weighted_manhattan,True,8,10,2.19999928958714e-05
+medium_obstacles,manhattan,True,12,24,5.6750024668872356e-05
+medium_obstacles,euclidean,True,12,26,6.020802538841963e-05
+medium_obstacles,weighted_manhattan,True,12,12,3.024999750778079e-05
+large_dense,manhattan,True,22,31,6.595795275643468e-05
+large_dense,euclidean,True,22,28,6.183399818837643e-05
+large_dense,weighted_manhattan,True,22,22,4.758295835927129e-05
