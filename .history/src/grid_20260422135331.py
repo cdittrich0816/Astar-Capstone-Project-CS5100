@@ -10,7 +10,7 @@ Position = Tuple[int, int]
 
 def is_in_bounds(grid: Grid, pos: Position) -> bool:
     """
-    This checks if a position is inside the grid.
+    This check if a position is inside the grid.
     """
     rows = len(grid)
     cols = len(grid[0])

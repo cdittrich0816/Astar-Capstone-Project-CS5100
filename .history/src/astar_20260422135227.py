@@ -91,11 +91,11 @@ def astar(
 
             tentative_g = g_score[current] + 1  # each move costs 1
 
-            # If the neighbor is new, we add it to open list
+            # If the neighbor is new, add it to open list
             if neighbor not in open_list:
                 open_list.append(neighbor)
 
-            # If this path is not better, we skip it
+            # If this path is not better, skip it
             elif tentative_g >= g_score.get(neighbor, float("inf")):
                 continue
 
@@ -104,7 +104,7 @@ def astar(
             g_score[neighbor] = tentative_g
             f_score[neighbor] = tentative_g + heuristic(neighbor, goal)
 
-    # If no path found
+    # No path found
     runtime = time.perf_counter() - start_time
     return {
         "path": None,

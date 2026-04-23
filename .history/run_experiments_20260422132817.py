@@ -15,8 +15,8 @@ RESULTS_PATH = "results/raw_results.csv"
 
 def run_all_experiments():
     """
-    This runs A* on every predefined grid using all the selected heuristics.
-    A list of result dictionaries is returned.
+    This run A* on every predefined grid using all selected heuristics.
+    Return a list of result dictionaries.
     """
     heuristics = {
         "manhattan": manhattan,
@@ -50,7 +50,7 @@ def run_all_experiments():
 
 def save_results_to_csv(results, filepath):
     """
-    This saves the experiment results to a CSV file.
+    Save experiment results to a CSV file.
     """
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
@@ -71,7 +71,7 @@ def save_results_to_csv(results, filepath):
 
 def print_results(results):
     """
-    This print results in a readable format.
+    Print results in a readable format.
     """
     print("\nExperiment Results")
     print("-" * 75)

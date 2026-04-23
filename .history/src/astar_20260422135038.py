@@ -36,23 +36,23 @@ def astar(
     heuristic: HeuristicFunction
 ) -> Dict[str, object]:
     """
-    This runs A* search on a grid using a simple list-based open set.
+    This run A* search on a grid using a simple list-based open set.
 
-    The function returns a dictionary with:
-        - path: a list of positions from start to goal, or None
-        - path_cost: the total number of steps, or None
-        - nodes_expanded: the total number of nodes expanded
-        - runtime: the execution time in seconds
+    Returns a dictionary with:
+        - path: list of positions from start to goal, or None
+        - path_cost: total number of steps, or None
+        - nodes_expanded: number of nodes expanded
+        - runtime: execution time in seconds
     """
     start_time = time.perf_counter()
 
-    # This stores the nodes discovered but not yet expanded
+    # Nodes discovered but not yet expanded
     open_list: List[Position] = [start]
 
-    # This stores the nodes that already fully expanded
+    # Nodes already fully expanded
     closed_set: Set[Position] = set()
 
-    # This stores the parent pointers for path reconstruction
+    # Parent pointers for path reconstruction
     came_from: Dict[Position, Position] = {}
 
     # g(n): actual cost from start to node
@@ -64,10 +64,10 @@ def astar(
     nodes_expanded = 0
 
     while open_list:
-        # This finds the node in the open list with the lowest f-score
+        # Find the node in the open list with the lowest f-score
         current = min(open_list, key=lambda node: f_score.get(node, float("inf")))
 
-        # If goal reached, we reconstruct and return the path
+        # If goal reached, reconstruct and return path
         if current == goal:
             runtime = time.perf_counter() - start_time
             path = reconstruct_path(came_from, current)
@@ -79,7 +79,7 @@ def astar(
                 "runtime": runtime,
             }
 
-        # Move the current node from open list to closed set
+        # Move current node from open list to closed set
         open_list.remove(current)
         closed_set.add(current)
         nodes_expanded += 1
@@ -91,11 +91,11 @@ def astar(
 
             tentative_g = g_score[current] + 1  # each move costs 1
 
-            # If the neighbor is new, we add it to open list
+            # If neighbor is new, add it to open list
             if neighbor not in open_list:
                 open_list.append(neighbor)
 
-            # If this path is not better, we skip it
+            # If this path is not better, skip it
             elif tentative_g >= g_score.get(neighbor, float("inf")):
                 continue
 
@@ -104,7 +104,7 @@ def astar(
             g_score[neighbor] = tentative_g
             f_score[neighbor] = tentative_g + heuristic(neighbor, goal)
 
-    # If no path found
+    # No path found
     runtime = time.perf_counter() - start_time
     return {
         "path": None,

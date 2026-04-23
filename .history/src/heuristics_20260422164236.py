@@ -34,5 +34,5 @@ def weighted_manhattan(a: Position, b: Position) -> float:
     Manhattan distance by a factor greater than 1, which
     can overestimate the true remaining cost.
     """
-    weight = 2.0
+    weight = 1.5
     return weight * manhattan(a, b)

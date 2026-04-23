@@ -104,7 +104,7 @@ def astar(
             g_score[neighbor] = tentative_g
             f_score[neighbor] = tentative_g + heuristic(neighbor, goal)
 
-    # If no path found
+    # No path found
     runtime = time.perf_counter() - start_time
     return {
         "path": None,

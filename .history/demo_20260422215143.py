@@ -1,5 +1,5 @@
 """
-This is a simple demo script for showing A* on one predefined grid.
+Simple demo script for showing A* on one predefined grid.
 """
 
 from experiments.predefined_grids import GRIDS

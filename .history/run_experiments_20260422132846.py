@@ -50,7 +50,7 @@ def run_all_experiments():
 
 def save_results_to_csv(results, filepath):
     """
-    This saves the experiment results to a CSV file.
+    This save experiment results to a CSV file.
     """
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
 
@@ -71,7 +71,7 @@ def save_results_to_csv(results, filepath):
 
 def print_results(results):
     """
-    This print results in a readable format.
+    Print results in a readable format.
     """
     print("\nExperiment Results")
     print("-" * 75)

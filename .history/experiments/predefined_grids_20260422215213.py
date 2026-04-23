@@ -1,5 +1,5 @@
 """
-This contains predefined grid environments for the A* experiments.
+This contains predefined grid environments for A* experiments.
 
 Grid values:
     0 = open cell

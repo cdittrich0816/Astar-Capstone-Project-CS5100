@@ -10,7 +10,7 @@ Position = Tuple[int, int]
 
 def is_in_bounds(grid: Grid, pos: Position) -> bool:
     """
-    This checks if a position is inside the grid.
+    Check if a position is inside the grid.
     """
     rows = len(grid)
     cols = len(grid[0])
@@ -20,10 +20,10 @@ def is_in_bounds(grid: Grid, pos: Position) -> bool:
 
 def is_walkable(grid: Grid, pos: Position) -> bool:
     """
-    This checks if a position is not blocked by an obstacble.
+    This check if a position is not blocked.
     Assumes:
         0 = open cell
-        1 = obstacle
+        1 = wall
     """
     r, c = pos
     return grid[r][c] == 0
