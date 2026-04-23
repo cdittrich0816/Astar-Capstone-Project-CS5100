@@ -67,7 +67,7 @@ def astar(
         # This finds the node in the open list with the lowest f-score
         current = min(open_list, key=lambda node: f_score.get(node, float("inf")))
 
-        # If goal reached, we reconstruct and return the path
+        # If the goal is reached, we reconstruct and return the path
         if current == goal:
             runtime = time.perf_counter() - start_time
             path = reconstruct_path(came_from, current)
@@ -79,19 +79,19 @@ def astar(
                 "runtime": runtime,
             }
 
-        # Move the current node from open list to closed set
+        # Move the current node from the open list to the closed set
         open_list.remove(current)
         closed_set.add(current)
         nodes_expanded += 1
 
-        # Explore neighbors
+        # Explore the neighbors of the current node
         for neighbor in get_neighbors(grid, current):
             if neighbor in closed_set:
                 continue
 
             tentative_g = g_score[current] + 1  # each move costs 1
 
-            # If the neighbor is new, we add it to open list
+            # If the neighbor is new, we add it to the open list
             if neighbor not in open_list:
                 open_list.append(neighbor)
 
