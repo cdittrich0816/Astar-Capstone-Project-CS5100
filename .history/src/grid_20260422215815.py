@@ -31,7 +31,7 @@ def is_walkable(grid: Grid, pos: Position) -> bool:
 
 def get_neighbors(grid: Grid, pos: Position) -> List[Position]:
     """
-    This returns valid 4-direction neighbors (up, down, left, right).
+    This returns a valid 4-direction neighbors (up, down, left, right).
     """
     r, c = pos
     candidates = [

@@ -17,7 +17,7 @@ def reconstruct_path(
 ) -> List[Position]:
     """
     We reconstruct the path by following parent pointers
-    backward from the goal node to the start node.
+    backward from the goal node to the start.
     """
     path = [current]
 
