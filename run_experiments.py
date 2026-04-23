@@ -71,7 +71,7 @@ def save_results_to_csv(results, filepath):
 
 def print_results(results):
     """
-    This print results in a readable format.
+    This prints the results in a readable and easy-to-follow format for the user.
     """
     print("\nExperiment Results")
     print("-" * 75)
