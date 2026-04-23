@@ -3,7 +3,7 @@ This contains predefined grid environments for the A* experiments.
 
 Grid values:
     0 = open cell
-    1 = wall
+    1 = obstacle
 """
 
 from typing import Dict, List, Tuple
